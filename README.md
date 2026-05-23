@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Jay | Unity Game Developer
+
+A personal portfolio website showcasing game development projects, built with **Next.js 16**, **React 19**, **TypeScript**, and **Tailwind CSS v4**. Statically exported and deployed to **GitHub Pages**.
+
+🌐 **Live site:** [https://novalostj.github.io/Portfolio](https://novalostj.github.io/Portfolio)
+
+---
+
+## Tech Stack
+
+| Layer        | Technology                           |
+| ------------ | ------------------------------------ |
+| Framework    | Next.js 16 (App Router)              |
+| UI Library   | React 19                             |
+| Language     | TypeScript                           |
+| Styling      | Tailwind CSS v4                      |
+| Deployment   | Static export → GitHub Pages         |
+
+## Features
+
+- **Dark-themed** design with an indigo accent palette
+- **Responsive layout** — mobile-friendly with a bottom navigation bar
+- **Featured projects** grid on the homepage
+- **Project detail pages** with contribution lists, tech tags, and external links (Steam, itch.io, etc.)
+- **About page** showcasing skills, expertise, and shipped titles
+- **Contact form** powered by Formspree
+- **Social links** — GitHub, YouTube, Twitter/X, itch.io
+- **Static export** for fast, zero-server hosting
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── globals.css          # Dark theme + animation utilities
+│   ├── layout.tsx           # Root layout with Header & Footer
+│   ├── page.tsx             # Homepage (Hero, Featured Projects, CTA)
+│   ├── about/page.tsx       # About page with bio, skills, highlights
+│   ├── contact/page.tsx     # Contact form page
+│   └── projects/
+│       ├── page.tsx         # All projects grid
+│       └── [slug]/page.tsx  # Individual project detail
+├── components/
+│   ├── Header.tsx           # Fixed navigation (desktop top bar / mobile bottom bar)
+│   ├── Footer.tsx           # Footer with social links & copyright
+│   ├── ProjectCard.tsx      # Project card with status badge & tech tags
+│   └── SocialLinks.tsx      # Social media SVG icons
+└── lib/
+    ├── types.ts             # TypeScript interfaces (Project, SocialLinks)
+    ├── projects-data.ts     # All project data, personal info, social links
+    └── projects.ts          # Data access utilities (getFeaturedProjects, etc.)
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm, pnpm, or yarn
+
+### Install
+
+```bash
+npm install
+```
+
+### Run development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the site. The base path is ignored in development.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Generates a static export in the `out/` directory, ready to deploy.
 
-To learn more about Next.js, take a look at the following resources:
+### Lint
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run lint
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+The site is automatically deployed via **GitHub Actions** whenever changes are pushed to the `main` branch:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push to `main`
+2. GitHub Actions runs the build workflow
+3. Static files are deployed to GitHub Pages
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To deploy manually:
+
+```bash
+npm run build
+# The out/ folder contains the full static site
+```
+
+## Adding Projects
+
+1. Add project data to `src/lib/projects-data.ts`
+2. Place project images in `public/images/projects/`
+3. Set `featured: true` to show on the homepage
+
+## License
+
+This project is a personal portfolio. All project names, trademarks, and assets belong to their respective owners.
