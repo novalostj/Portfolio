@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Project } from "@/lib/types";
+import { assetPath } from "@/lib/utils";
 
 interface ProjectCardProps {
   project: Project;
@@ -30,7 +31,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <div className="relative aspect-video overflow-hidden bg-[var(--color-background)]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={project.image}
+          src={assetPath(project.image)}
           alt={project.title}
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"

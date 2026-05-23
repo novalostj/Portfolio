@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getProjectBySlug, getAllProjects } from "@/lib/projects";
 import ProjectCard from "@/components/ProjectCard";
+import { assetPath } from "@/lib/utils";
 import type { Metadata } from "next";
 
 interface Props {
@@ -106,7 +107,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           <div className="relative aspect-video bg-[var(--color-background)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={project.image}
+              src={assetPath(project.image)}
               alt={project.title}
               className="absolute inset-0 h-full w-full object-cover"
             />
