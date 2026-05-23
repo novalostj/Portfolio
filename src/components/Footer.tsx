@@ -41,6 +41,22 @@ export default function Footer() {
         <p className="text-xs text-[var(--color-muted)]">
           &copy; {new Date().getFullYear()} Jay. Built with Next.js
         </p>
+
+        {/*
+          ---- Country Visitor Counter ----
+          To enable the visible country flag counter:
+          1. Go to https://flagcounter.com/
+          2. Click "Get your free Flag Counter!"
+          3. Customize colors to match the dark theme:
+             - Background: #0a0a0b
+             - Text: #ededed
+             - Border: #27272a
+          4. Copy the embed code they give you and paste it below,
+             replacing the placeholder comment.
+        */}
+        <div className="mt-4 flex justify-center">
+          {/* Paste your FlagCounter embed code here */}
+        </div>
       </div>
     </footer>
   );
