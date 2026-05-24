@@ -229,7 +229,7 @@ const projects: Project[] = [
       "You're a robot beetle abandoned on a junkyard — survive the chaos, but beware: your bullets might hit you back!",
     description:
       "A submission for Brackeys Game Jam 13. You play as a robot beetle abandoned on a junkyard by your mad scientist creator. The unique twist: the bullets you shoot can ricochet and hit you back, adding a layer of strategy to the survival gameplay.",
-    role: "Game Jam Participant",
+    role: "Programmer",
     contributions: [
       "Game jam rapid prototyping",
       "Core gameplay mechanics",
@@ -243,6 +243,7 @@ const projects: Project[] = [
     },
     featured: false,
     status: "game-jam",
+    gameBuildPath: "buggy-bot",
   },
   {
     title: "Linear Quest Clone",

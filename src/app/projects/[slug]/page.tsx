@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getProjectBySlug, getAllProjects } from "@/lib/projects";
 import ProjectCard from "@/components/ProjectCard";
+import UnityGameEmbed from "@/components/UnityGameEmbed";
 import { assetPath } from "@/lib/utils";
 import type { Metadata } from "next";
 
@@ -113,6 +114,14 @@ export default async function ProjectDetailPage({ params }: Props) {
             />
           </div>
         </div>
+
+        {/* Playable game embed */}
+        {project.gameBuildPath && (
+          <div className="mb-10">
+            <h2 className="mb-4 text-xl font-semibold">Play the Game</h2>
+            <UnityGameEmbed buildPath={project.gameBuildPath} />
+          </div>
+        )}
 
         {/* Content grid */}
         <div className="mb-12 grid gap-10 md:grid-cols-3">

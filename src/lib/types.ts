@@ -20,6 +20,7 @@ export interface Project {
   featured: boolean;
   status: "released" | "in-development" | "game-jam" | "academic";
   videoUrl?: string;
+  gameBuildPath?: string;
 }
 
 export interface SocialLinks {
